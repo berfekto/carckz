@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRACKZ | بوابة تشغيل المواقع الثلاثة</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', system-ui, sans-serif; }
+    body {
+      background: #FAF8F5;
+      color: #292524;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 20px;
+    }
+    .header {
+      max-width: 1200px;
+      margin: 0 auto 36px auto;
+      text-align: center;
+    }
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #FFFFFF;
+      padding: 10px 24px;
+      border-radius: 999px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid #E7E5E4;
+      margin-bottom: 16px;
+    }
+    .brand-title {
+      font-size: 28px;
+      font-weight: 900;
+      color: #A6192E;
+      letter-spacing: 1px;
+    }
+    .brand-sub {
+      font-size: 13px;
+      font-weight: 700;
+      color: #78716C;
+      background: #F5F5F4;
+      padding: 2px 10px;
+      border-radius: 999px;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: #57534E;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+    .ip-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ECFDF5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+      padding: 6px 16px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      border: 1px solid #E7E5E4;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+    }
+    .card-kiosk { border-top: 5px solid #DC2626; }
+    .card-badge { border-top: 5px solid #F59E0B; }
+    .card-dash  { border-top: 5px solid #2563EB; }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .card-kiosk .icon-box { background: #FEF2F2; color: #DC2626; }
+    .card-badge .icon-box { background: #FFFBEB; color: #D97706; }
+    .card-dash .icon-box  { background: #EFF6FF; color: #2563EB; }
+    .card-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #1C1917;
+    }
+    .card-role {
+      font-size: 12px;
+      font-weight: 700;
+      color: #78716C;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: #57534E;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .qr-container {
+      background: #FAF8F5;
+      border: 1px dashed #D6D3D1;
+      border-radius: 20px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .qr-container img {
+      width: 140px;
+      height: 140px;
+      border-radius: 12px;
+      background: #FFFFFF;
+      padding: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .qr-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #78716C;
+      margin-top: 8px;
+    }
+    .links-box {
+      background: #F5F5F4;
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 18px;
+      font-family: monospace;
+      font-size: 12px;
+      direction: ltr;
+      text-align: left;
+      color: #44403C;
+      word-break: break-all;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px 20px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .btn-red { background: #DC2626; color: #FFFFFF; }
+    .btn-red:hover { background: #B91C1C; }
+    .btn-amber { background: #F59E0B; color: #FFFFFF; }
+    .btn-amber:hover { background: #D97706; }
+    .btn-blue { background: #2563EB; color: #FFFFFF; }
+    .btn-blue:hover { background: #1D4ED8; }
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 12px;
+      color: #A8A29E;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <header class="header">
+      <div class="brand-badge">
+        <span class="brand-title">CRACKZ</span>
+        <span class="brand-sub">كراكيز - Nashville Chicken Kings</span>
+      </div>
+      <h1 style="font-size: 24px; font-weight: 900; color: #1C1917;">بوابة تشغيل المواقع الثلاثة لمنظومة الحضور الذكية</h1>
+      <p class="subtitle">اضغط على أي موقع لفتحه مباشرة على الكمبيوتر، أو امسح كود الـ QR من هاتفك</p>
+      <div class="ip-notice">
+        <span>🌐 عنوان الشبكة المحلية للفرع (Wi-Fi IP):</span>
+        <strong style="direction: ltr; display: inline-block;">http://192.168.74.73:3000</strong>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- Card 1: Restaurant Scanner Station -->
+      <div class="card card-kiosk">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">📱</div>
+            <div>
+              <div class="card-title">1. محطة مسح المطعم</div>
+              <div class="card-role">هاتف أو تابلت الفرع الثابت</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            الشاشة المخصصة لجهاز المطعم الثابت عند المدخل أو الكاشير. الكاميرا تعمل ببث مباشر ومستمر لمسح أكواد الموظفين مع إصدار نغمة ترحيبية فورية.
+          </p>
+          <div class="qr-container">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=http://192.168.74.73:3000/kiosk-scanner" alt="QR Kiosk Scanner" />
+            <div class="qr-label">امسح بكاميرا هاتف المطعم لفتح المحطة فوراً</div>
+          </div>
+          <div class="links-box">
+            Local: http://localhost:3000/kiosk-scanner<br>
+            Wi-Fi: http://192.168.74.73:3000/kiosk-scanner
+          </div>
+        </div>
+        <a href="http://localhost:3000/kiosk-scanner" target="_blank" class="btn btn-red">فتح محطة مسح المطعم ◀</a>
+      </div>
+
+      <!-- Card 2: Employee Dynamic Badge -->
+      <div class="card card-badge">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🤳</div>
+            <div>
+              <div class="card-title">2. كود الموظف المتغير</div>
+              <div class="card-role">هاتف الموظف الشخصي</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            الصفحة التي يفتحها الموظف على هاتفه، يدخل كود PIN السريع (تجربة: 1001 للشيف أحمد)، فيظهر له كود الـ QR الديناميكي الذي يتجدد كل 15 ثانية (مستحيل التلاعب أو تصوير الشاشة).
+          </p>
+          <div class="qr-container">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=http://192.168.74.73:3000/my-qr" alt="QR My Badge" />
+            <div class="qr-label">امسح بهاتف الموظف لفتح بطاقة الحضور</div>
+          </div>
+          <div class="links-box">
+            Local: http://localhost:3000/my-qr<br>
+            Wi-Fi: http://192.168.74.73:3000/my-qr
+          </div>
+        </div>
+        <a href="http://localhost:3000/my-qr" target="_blank" class="btn btn-amber">تجربة كود الموظف (PIN: 1001) ◀</a>
+      </div>
+
+      <!-- Card 3: Manager Dashboard -->
+      <div class="card card-dash">
+        <div>
+          <div class="card-header">
+            <div class="icon-box">🏠</div>
+            <div>
+              <div class="card-title">3. لوحة المدير والمتابعة</div>
+              <div class="card-role">للمدير والمالك (من البيت أو الهاتف)</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            لوحة تحكم إدارية متجاوبة 100% لمتابعة حضور وانصراف وتأخير وغياب طاقم المطعم بالثانية مع سجل فوري، إحصائيات دقيقة، وتصدير Excel/CSV.
+          </p>
+          <div class="qr-container">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=http://192.168.74.73:3000/dashboard" alt="QR Manager Dashboard" />
+            <div class="qr-label">امسح بهاتف المدير لفتح اللوحة من أي مكان</div>
+          </div>
+          <div class="links-box">
+            Local: http://localhost:3000/dashboard<br>
+            Wi-Fi: http://192.168.74.73:3000/dashboard
+          </div>
+        </div>
+        <a href="http://localhost:3000/dashboard" target="_blank" class="btn btn-blue">فتح لوحة الإدارة والمتابعة ◀</a>
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer">
+    مطعم CRACKZ - كراكيز © 2026 • منظومة بصمة الحضور الذكية بالـ Dynamic QR Code
+  </footer>
+</body>
+</html>
